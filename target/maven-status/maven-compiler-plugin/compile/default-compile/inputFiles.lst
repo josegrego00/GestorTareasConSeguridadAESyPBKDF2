@@ -1,0 +1,12 @@
+/home/josepino/NetBeansProjects/GestorTareaSeguridad/src/main/java/Logica/Tarea.java
+/home/josepino/NetBeansProjects/GestorTareaSeguridad/src/main/java/Logica/Usuario.java
+/home/josepino/NetBeansProjects/GestorTareaSeguridad/src/main/java/Persistencia/exceptions/NonexistentEntityException.java
+/home/josepino/NetBeansProjects/GestorTareaSeguridad/src/main/java/Logica/ControladoraLogica.java
+/home/josepino/NetBeansProjects/GestorTareaSeguridad/src/main/java/com/sistemaimtel/gestortareaseguridad/GestorTareaSeguridad.java
+/home/josepino/NetBeansProjects/GestorTareaSeguridad/src/main/java/Persistencia/UsuarioJpaController.java
+/home/josepino/NetBeansProjects/GestorTareaSeguridad/src/main/java/Vistas/VistaLoginPrincipal.java
+/home/josepino/NetBeansProjects/GestorTareaSeguridad/src/main/java/Vistas/VistaCrearUsuarioNuevo.java
+/home/josepino/NetBeansProjects/GestorTareaSeguridad/src/main/java/Persistencia/exceptions/IllegalOrphanException.java
+/home/josepino/NetBeansProjects/GestorTareaSeguridad/src/main/java/Persistencia/ControladoraPersistencia.java
+/home/josepino/NetBeansProjects/GestorTareaSeguridad/src/main/java/Persistencia/TareaJpaController.java
+/home/josepino/NetBeansProjects/GestorTareaSeguridad/src/main/java/Persistencia/exceptions/PreexistingEntityException.java
