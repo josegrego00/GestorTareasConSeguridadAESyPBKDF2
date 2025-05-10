@@ -199,7 +199,7 @@ public class VistaTareas extends javax.swing.JFrame {
         int idTarea = (int) modeloTabla.getValueAt(filaSeleccionada, 0);
         Tarea tarea = control.obtenerTareaPorId(idTarea);
         
-        VistaNuevaTarea vistaEditar = new VistaNuevaTarea(this, true, tarea);
+        VistaNuevaTarea vistaEditar = new VistaNuevaTarea(this, true);
         vistaEditar.setVisible(true);
         cargarTareas();
     }

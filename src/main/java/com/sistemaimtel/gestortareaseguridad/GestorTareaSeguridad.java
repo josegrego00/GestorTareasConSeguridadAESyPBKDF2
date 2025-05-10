@@ -25,11 +25,11 @@ import javax.crypto.spec.PBEKeySpec;
 public class GestorTareaSeguridad {
 
     public static void main(String[] args) throws Exception {
-        VistaCrearUsuarioNuevo crearUsuarioNuevo= new VistaCrearUsuarioNuevo();
-        crearUsuarioNuevo.setVisible(true);
+       /* VistaCrearUsuarioNuevo crearUsuarioNuevo= new VistaCrearUsuarioNuevo();
+        crearUsuarioNuevo.setVisible(true);*/
         VistaLoginPrincipal loginPrincipal= new VistaLoginPrincipal();
         loginPrincipal.setVisible(true);
-        VistaTareas vistaTareas= new VistaTareas();
-        vistaTareas.setVisible(true);
+        /*VistaTareas vistaTareas= new VistaTareas();
+        vistaTareas.setVisible(true);*/
     }
 }

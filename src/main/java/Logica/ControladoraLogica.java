@@ -1,10 +1,13 @@
 package Logica;
 
 import Persistencia.ControladoraPersistencia;
+import Vistas.VistaCrearUsuarioNuevo;
+import Vistas.VistaTareas;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.security.spec.InvalidKeySpecException;
 import java.util.Base64;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -60,20 +63,21 @@ public class ControladoraLogica {
         }
     }
 
-    public void validarUsuario(JTextField txtUsuario, JPasswordField txtContrasenna) {
+    public boolean validarUsuario(JTextField txtUsuario, JPasswordField txtContrasenna) {
+        
         String nombreUsuario = txtUsuario.getText();
         
         // Verificar bloqueo antes de buscar en la base de datos
         if (estaUsuarioBloqueado(nombreUsuario)) {
             mostrarMensajeBloqueo(nombreUsuario);
-            return;
+            return false;
         }
         
         Usuario usuario = buscarUsuario(nombreUsuario);
         if (usuario == null) {
             registrarIntentoFallido(nombreUsuario);
             mostrarError("Credenciales incorrectas");
-            return;
+            return false;
         }
         
         try {
@@ -81,8 +85,11 @@ public class ControladoraLogica {
             
             if (credencialesValidas) {
                 reiniciarIntentos(nombreUsuario);
-                mostrarExito("Login exitoso");
-                // Aquí iría la lógica para abrir la siguiente ventana
+                mostrarExito("Welcome...");
+                
+                VistaTareas vistaTareas= new VistaTareas();
+                vistaTareas.setVisible(true);
+                return true;
             } else {
                 registrarIntentoFallido(nombreUsuario);
                 mostrarError("Contraseña incorrecta");
@@ -91,6 +98,7 @@ public class ControladoraLogica {
             mostrarError("Error al validar usuario: " + e.getMessage());
             e.printStackTrace();
         }
+        return false;
     }
 
     // Métodos auxiliares para seguridad
@@ -183,6 +191,24 @@ public class ControladoraLogica {
 
     public Tarea obtenerTareaPorId(int idTarea) {
         return controladoraPersistencia.obtenerTareaPorId(idTarea);
+    }
+
+    public boolean nuevoUsuario() {
+        VistaCrearUsuarioNuevo crearUsuarioNuevo= new VistaCrearUsuarioNuevo();
+        crearUsuarioNuevo.setVisible(true);
+       return true;
+    }
+
+    public boolean editarTarea(Tarea tareaEditar) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public boolean crearTarea(Tarea nuevaTarea) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public boolean crearTarea(String nombre, String descripcion, Date fechaLimite, boolean completada) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     

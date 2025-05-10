@@ -12,6 +12,7 @@ import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
+import java.awt.event.ActionEvent;
 import javax.swing.BorderFactory;
 
 /**
@@ -131,6 +132,7 @@ public class VistaLoginPrincipal extends javax.swing.JFrame {
         btnNuevoUsuario.setForeground(new Color(56, 67, 236));
         btnNuevoUsuario.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
         btnNuevoUsuario.setCursor(new Cursor(Cursor.HAND_CURSOR));
+
         btnNuevoUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnNuevoUsuario.setForeground(new Color(40, 57, 216));
@@ -138,6 +140,12 @@ public class VistaLoginPrincipal extends javax.swing.JFrame {
 
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 btnNuevoUsuario.setForeground(new Color(56, 67, 236));
+            }
+        });
+
+        btnNuevoUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevoUsuarioActionPerformed(evt);
             }
         });
 
@@ -207,8 +215,17 @@ public class VistaLoginPrincipal extends javax.swing.JFrame {
         setLocationRelativeTo(null); // Centrar la ventana
     }
 
+    private void btnNuevoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {
+        if (controladoraLogica.nuevoUsuario()) {
+            this.dispose();
+        }
+
+    }
+
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {
-        controladoraLogica.validarUsuario(txtUsuario, txtContrasenna);
+        if (controladoraLogica.validarUsuario(txtUsuario, txtContrasenna)) {
+            this.dispose();
+        }
     }
 
     // Variables declaration - do not modify                     
